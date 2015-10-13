@@ -4,6 +4,9 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	-webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
 }
 
 html{
@@ -109,6 +112,7 @@ a{
 
 #sidebar h3{
 	background: #8f8c8c;
+	margin-top:0px;
 	color: #fff;
 	text-align: center;
 	height: 40px;
@@ -234,6 +238,7 @@ a{
 	border: 1px solid #8f8c8c;
 	background-color:  #fff;
 	padding: 0px 5px 5px 5px;
+	
 }
 #pagination li.active-pag{
 	background-color:  #8f8c8c;
