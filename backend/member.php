@@ -163,7 +163,10 @@
 	            	validators: {
 	                    emailAddress: {
                         	message: 'The email address is not valid'
-                    	}
+                    	},
+						notEmpty: {
+	                        message: 'required'
+	                    }
 	                }
 	            },
 				'level':{

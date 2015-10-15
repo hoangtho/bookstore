@@ -4,6 +4,10 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	
+}
+
+#pagination li{
 	-webkit-box-sizing: content-box !important;
     -moz-box-sizing: content-box !important;
     box-sizing: content-box !important;
@@ -117,6 +121,15 @@ a{
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
+	margin-bottom:0px;
+}
+
+#sidebar ul{
+	margin-bottom:0px;
+}
+
+#main-content h3{
+	margin-top:0px;
 }
 
 #cat{
@@ -175,13 +188,25 @@ a{
 	border-collapse: collapse;
 }
 
-#book td, #book th , #mb td, #mb th{
+#feedback{
+	margin-right: 35px;
+}
+
+#fdID, #fbDel{
+	width: 100px;
+}
+
+#fbEmail, #fbContent{
+	width: auto;
+}
+
+#book td, #book th , #mb td, #mb th, #category td, #category th, #feedback td, #feedback th{
     font-size: 1em;
     border: 1px solid  #8f8c8c;
     padding: 3px 7px 2px 7px;
 }
 
-#book th , #mb th{
+#book th , #mb th, #category th, #feedback th{
     font-size: 1.1em;
     text-align: left;
     padding-top: 5px;
@@ -195,7 +220,7 @@ a{
     background: #F1F1F1;
 }
 
-#book td, #mb td{
+#book td, #mb td, #feedback td{
 	color: #000;
 }
 
@@ -252,4 +277,18 @@ a{
 	height: 30px;
 }
 
+
+/*CATEGORY BACKEND
+-------------------------------------------------------------*/
+#category{
+	margin-top: 20px;
+}
+
+#category #id, #category #edit, #category #catDel{
+	width: 50px;
+}
+
+#category #catName{
+	witth: auto;
+}
 

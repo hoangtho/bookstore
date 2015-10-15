@@ -15,13 +15,13 @@
 	<div id="content">
 		<div class='wrapper'>
 			<h3>Category List</h3>
-				<a class="btn btn-info btn_add btn-danger" href="#myModal" data-toggle="modal" data-target="#myModal" id="btn_add">Add New</a> 
-				<table id="mb">
+				<a class="btn btn-info btn-danger" href="#myModal" data-toggle="modal" data-target="#myModal" id="btn_add">Add New</a> 
+				<table id="category">
 					  <tr>
-						<th><center>ID</center></th>
-						<th>Category Name</th>
-						<th><center>Edit</center></th>
-						<th><center>Delete</center></th>
+						<th id="id"><center>ID</center></th>
+						<th id="catName">Category Name</th>
+						<th id="edit"><center>Edit</center></th>
+						<th id="catDel"><center>Delete</center></th>
 					  </tr>
 					  <?php while($row=mysqli_fetch_array($result)){ ?>
 					  <tr>
@@ -31,7 +31,7 @@
 						</td>
 						<td>
 							<center>
-								<a id="editCate" href="#myModal" data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['cateID'] ?> " data-name="<?php echo $row['cateName'] ?>" ><img src='images/user_edit.png'></a>
+								<a id="editCate" href="#myModal" data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['cateID'] ?> " data-name="<?php echo ucfirst(strtolower($row['cateName'])) ?>" ><img src='images/user_edit.png'></a>
 							</center>
 						</td>
 						<td>
@@ -60,8 +60,8 @@
 			<div class="modal-body">
 				<form action="category-action.php" method="POST" id="cate-form" class="form-horizontal">
 					<div class="form-group">
-						<label for="cate-name" class="col-md-3 control-label">Name: </label>
-						<div class="col-md-9">
+						<label for="cate-name" class="col-md-2 control-label">Name</label>
+						<div class="col-md-10">
 							<input class="form-control" type="text" name="cate-name" id="cate-name">
 						</div>
 					</div>	
@@ -101,7 +101,8 @@
 	            invalid: 'glyphicon glyphicon-remove',
 	            validating: 'glyphicon glyphicon-refresh'
 	        },
-	        fields: {
+			
+	         fields: {
 	            'cate-name': {
 	                validators: {
 	                    notEmpty: {
@@ -113,7 +114,7 @@
 	    });
 	});
 	
-	$(document).on('click','.btn_add',function(evt){
+	$(document).on('click','#btn_add',function(evt){
 		$("#myModalLabel").text("Add new category");
 
 		$("#cate-name").val("");

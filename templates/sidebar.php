@@ -1,13 +1,21 @@
+<?php
+	include('/core/connect.php');
+	
+	$sql = "SELECT * FROM category";
+	$result = mysqli_query($con, $sql);
+?>	
+
 				<div id='sidebar'>
 					<div id="cat">
 						<h3 class='title'>Categories</h3>
 						<ul>
-							<li><a href=''>Romance</a></li>
-							<li><a href=''>Horror </a></li>
-							<li><a href=''>Fiction</a></li>
-							<li><a href=''>Politic</a></li>
-							<li><a href=''>Education</a></li>
-							<li><a href=''>Comic</a></li>
+							<?php
+								while($row=mysqli_fetch_array($result)){
+							?>
+								<li><a href=''><?php echo ucfirst(strtolower($row['cateName'])); ?></a></li>
+							<?php
+								}
+							?>
 						</ul>
 					</div><!-- END #cat-->
 					<div id="byPrice">
