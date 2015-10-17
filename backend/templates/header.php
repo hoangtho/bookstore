@@ -30,13 +30,8 @@
 					<ul>
 						<li><a href='index.php'>Home</a></li>
 						<li><a href=''>Products</a></li>
-						<li><a href=''>Indents</a></li>
 						<li><a href='member.php'>Members</a></li>
 						<li><a href='feedback.php'>Feedback</a></li>
-						<li><a href=''>Customer</a></li>
-						<li><a href=''>Contact</a></li>
-						<li><a href=''>Configuration</a></li>
-						<li><a href=''>Add pages</a></li>
 					</ul>
 				</div><!-- END #main-nav -->
 			</div><!-- END #header -->

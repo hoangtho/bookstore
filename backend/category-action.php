@@ -22,5 +22,20 @@
 		header('Location:category-list.php');
 	
 	}
+	
+	
+	//EDIT USER
+	if( isset($_POST['edit']) ){
+			$id = $_POST["cateID"];
+			$name = $_POST["cate-name"];
+		
+			$sql = "UPDATE category
+						SET cateName = '$name', 
+						WHERE cateID = '$id' ";
+		
+			mysqli_query($con, $sql);
+			
+			header('Location: category-list.php');
+		}
 ?>
 

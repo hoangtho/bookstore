@@ -60,6 +60,11 @@
 			<div class="modal-body">
 				<form action="category-action.php" method="POST" id="cate-form" class="form-horizontal">
 					<div class="form-group">
+						<div class="col-md-2 col-md-offset-3">
+							<input class="form-control" type="hidden" id="cateID" name="cateID">
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="cate-name" class="col-md-2 control-label">Name</label>
 						<div class="col-md-10">
 							<input class="form-control" type="text" name="cate-name" id="cate-name">
@@ -114,6 +119,15 @@
 	    });
 	});
 	
+	$(document).on('click','#editCate',function(evt){
+		
+		$("#myModalLabel").text("Category Edit Form");
+		$("#cateID").show();
+		$("#cateID").val($(this).attr("data-id"));
+		$("#cate-name").val($(this).attr("data-name"));
+		$("#btn_submit").attr("name","edit");
+	});
+	
 	$(document).on('click','#btn_add',function(evt){
 		$("#myModalLabel").text("Add new category");
 
@@ -121,12 +135,6 @@
 		$("#btn_submit").attr("name","add");
 	});
 	
-	$(document).on('click','#editCate',function(evt){
-		
-		$("#myModalLabel").text("Category Edit Form");
-		$("#userID").show();
-		$("#userID").val($(this).attr("data-id"));
-		$("#cate-name").val($(this).attr("data-name"));
-	});
+	
 	
 </script>
