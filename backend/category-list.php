@@ -15,7 +15,7 @@
 	<div id="content">
 		<div class='wrapper'>
 			<h3>Category List</h3>
-				<a class="btn btn-info btn-danger" href="#myModal" data-toggle="modal" data-target="#myModal" id="btn_add">Add New</a> 
+				<a class="btn btn-info btn_add btn-danger" href="#myModal" data-toggle="modal" data-target="#myModal" id="btn_add">Add</a>
 				<table id="category">
 					  <tr>
 						<th id="id"><center>ID</center></th>
@@ -31,7 +31,7 @@
 						</td>
 						<td>
 							<center>
-								<a id="editCate" href="#myModal" data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['cateID'] ?> " data-name="<?php echo ucfirst(strtolower($row['cateName'])) ?>" ><img src='images/user_edit.png'></a>
+								<a id="edit2" href="#myModal" data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['cateID'] ?> " data-name="<?php echo ucfirst(strtolower($row['cateName'])) ?>" ><img src='images/user_edit.png'></a>
 							</center>
 						</td>
 						<td>
@@ -72,7 +72,7 @@
 					</div>	
 					<div class="form-group">
 						<div class="col-md-9 col-md-offset-3">
-							<input class="btn btn-info btn-danger" type="submit" name="add" id="btn_submit" value="Save">	
+							<input class="btn btn-info btn-danger" type="submit" name="submit_add" id="btn_submit" value="Done">	
 							<button type="button" class="btn btn-default form-close" data-dismiss="modal">Close</button>
 						</div>
 					</div>
@@ -119,20 +119,22 @@
 	    });
 	});
 	
-	$(document).on('click','#editCate',function(evt){
+	$(document).on('click','#edit2',function(evt){
 		
-		$("#myModalLabel").text("Category Edit Form");
+		$("#myModalLabel").text("Edit The Category");
+
 		$("#cateID").show();
 		$("#cateID").val($(this).attr("data-id"));
 		$("#cate-name").val($(this).attr("data-name"));
-		$("#btn_submit").attr("name","edit");
+		$("#btn_submit").attr("name","submit_edit");
 	});
-	
-	$(document).on('click','#btn_add',function(evt){
-		$("#myModalLabel").text("Add new category");
 
+	$(document).on('click','.btn_add',function(evt){
+		
+		$("#myModalLabel").text("Add new category");
+		$("#cateID").hide();
 		$("#cate-name").val("");
-		$("#btn_submit").attr("name","add");
+		$("#btn_submit").attr("name","submit_add");
 	});
 	
 	

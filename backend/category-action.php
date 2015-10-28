@@ -2,7 +2,7 @@
 	include('../core/connect.php');
 	
 	//ADD NEW CATEGORY
-	if(isset($_POST['add'])){	
+	if(isset($_POST['submit_add'])){	
 			$name = $_POST['cate-name'];
 		
 			$sql = "INSERT INTO category(cateName) VALUES ('$name') ";
@@ -24,14 +24,12 @@
 	}
 	
 	
-	//EDIT USER
-	if( isset($_POST['edit']) ){
+	//EDIT CATEGORY
+	if( isset($_POST['submit_edit']) ){
 			$id = $_POST["cateID"];
 			$name = $_POST["cate-name"];
 		
-			$sql = "UPDATE category
-						SET cateName = '$name', 
-						WHERE cateID = '$id' ";
+			$sql = "UPDATE category SET cateName = '{$name}' WHERE cateID = '{$id}'";
 		
 			mysqli_query($con, $sql);
 			

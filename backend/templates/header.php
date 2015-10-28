@@ -29,7 +29,7 @@
 				<div id='main-nav'>
 					<ul>
 						<li><a href='index.php'>Home</a></li>
-						<li><a href=''>Products</a></li>
+						<li><a href='product-list.php'>Products</a></li>
 						<li><a href='member.php'>Members</a></li>
 						<li><a href='feedback.php'>Feedback</a></li>
 					</ul>
