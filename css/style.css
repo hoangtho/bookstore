@@ -572,3 +572,16 @@ ul li{
 	padding: 5px;
 	font-size: 1.8em;
 }
+
+
+/* TOTAL 
+------------------------------*/
+
+#total{
+	margin-top: 15px;
+	font-size: 2em;
+	position:absolute;
+	right:180px;
+	color: red;
+	font-weight: bold;
+}

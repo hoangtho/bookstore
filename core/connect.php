@@ -1,4 +1,6 @@
 <?php
+	global $con;
+	
 	$dbHost='localhost';
 	$dbUser='root';
 	$dbPass='';

@@ -61,7 +61,15 @@
 						<input type="submit" value="Search" />
 					</form>
 					<div id='cart'>
-						<h4>Your Cart</h4><p><a href='detail.php'>1 items</a></p>
+						<h4>Your Cart</h4><p><a href='detail.php'><?php if(isset($_SESSION['giohang'])){
+																										if($_SESSION['giohang']){
+																											echo count($_SESSION['giohang']);
+																										} 
+																									}else{
+																											echo "0";
+																											}?> items</a>
+																							</p>
+																							
 					</div><!-- end #cart -->
 				</div><!-- END .wrapper -->
 			</div><!-- END #main-header -->

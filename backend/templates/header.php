@@ -31,6 +31,7 @@
 						<li><a href='index.php'>Home</a></li>
 						<li><a href='product-list.php'>Products</a></li>
 						<li><a href='member.php'>Members</a></li>
+						<li><a href='order.php'>Orders</a></li>
 						<li><a href='feedback.php'>Feedback</a></li>
 					</ul>
 				</div><!-- END #main-nav -->
