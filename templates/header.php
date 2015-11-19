@@ -56,8 +56,8 @@
 			<div id='main-header'>
 				<div class="wrapper">
 					<h1><a href='index.php'></a>Book Online Store</h1>
-					<form id="search" action="" method="">			
-						<input type="text" />
+					<form id="search" action="index.php" method="GET">			
+						<input type="text" name="keyword" />
 						<input type="submit" value="Search" />
 					</form>
 					<div id='cart'>

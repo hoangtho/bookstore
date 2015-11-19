@@ -24,15 +24,20 @@
 					<?php
 					
 					$danhmuccon = "";
+					
 					   if (isset($_GET['category'])) {
-						  $danhmuccon = "WHERE 1=1 and bookCateID = " . $_GET['category'];
+						  $danhmuccon = "and bookCateID = " .$_GET['category'];
 					   }
 					   
-						$query = "SELECT * FROM books ".$danhmuccon;
-						$result = mysqli_query($con, $query);
+					   if(isset($_GET['keyword'])){
+						$result = mysqli_query($con, "SELECT * FROM books WHERE (bookName LIKE '%{$_GET['keyword']}%' )" . $danhmuccon);
 						
-						while($row=mysqli_fetch_array($result))
-						{ 
+					  }else{
+						$result = mysqli_query($con, "SELECT * FROM books WHERE 1=1 ".$danhmuccon);
+					}
+					   
+					while($row=mysqli_fetch_array($result))
+					{ 
 					?>
 					<div class="detail">
 						<a href="product.php"><img src="images/img1.png" alt="" /></a>
@@ -47,7 +52,7 @@
 						
 					</div><!--End #detail-->
 					<?php
-						}
+					}
 					?>
 				</div><!--End #tab1-->
 			
