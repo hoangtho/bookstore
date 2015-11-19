@@ -28,7 +28,7 @@
 				<div id='main-nav'>
 					<ul>
 						<li><a href='index.php'>Home</a></li>
-						<li><a href=''>Products</a></li>
+						<li><a href='product-list.php'</a>Products</li>
 						<li><a href=''>Indents</a></li>
 						<li><a href='member.php'>Members</a></li>
 						<li><a href=''>Feedback</a></li>

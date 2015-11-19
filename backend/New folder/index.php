@@ -1,49 +1,32 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Admin Panel</title>
-		<meta charset='utf-8'></meta>
-		<link href='css/style.css' type='text/css' rel='stylesheet' />
-	</head>
-	<body>
-		<div class='wrapper'>
-			<div id='header'>
-				<div id='logo'>
-					<img src='images/logo.gif' alt='admin panel'/>
-				</div><!--END #logo-->
-				<div id='top'>Welcome Admin Hoangtho, <a href='../index.php'>Visit site</a>  <a id='message' href='#'>Messages</a> <a id='logout' href='#'>Logout</a></div>
-				<div id='main-nav'>
-					<ul>
-						<li><a href=''>Home</a></li>
-						<li><a href='product-list.php'</a>Products</li>
-						<li><a href=''>Indents</a></li>
-						<li><a href=''>Members</a></li>
-						<li><a href=''>Feedback</a></li>
-						<li><a href=''>Customer</a></li>
-						<li><a href=''>Contact</a></li>
-						<li><a href=''>Configuration</a></li>
-						<li><a href=''>Add pages</a></li>
-					</ul>
-				</div><!-- END #main-nav -->
-			</div><!-- END #header -->
-			<div id='content'>
+<?php
+	session_start();
+	if($_SESSION['login'] && $_SESSION['level'] != 0){
+	
+	include ('templates/header.php');
+	include('../core/connect.php');
+?>
+		<div id='content'>
 				<div id='sidebar'>
 					<div id='cat'>
 					<h3>Category</h3>
 					<ul>	
-						<li><a href=''>Romance</a></li>
-						<li><a href=''>Fiction</a></li>
-						<li><a href=''>Horror</a></li>
-						<li><a href=''>Politic</a></li>
-						<li><a href=''>Education</a></li>
-						<li><a href=''>Comic</a></li>
+						<?php
+							$sql = "SELECT * FROM category";
+							$result = mysqli_query($con, $sql);
+							
+							while($row=mysqli_fetch_array($result)){
+							?>
+									<li><a><?php echo ucfirst(strtolower($row['cateName'])); ?></a></li>
+								<?php
+							}
+						?>
 					</ul>
 					</div><!--END #cat-->
 					<div id='add-product'>
-					<h3>Add new</h3>
+					<h3>Management</h3>
 					<ul>
 						<li><a href=''>Add product</a></li>
-						<li><a href=''>Add category </a></li>
+						<li><a href="category-list.php">Category</a></li>
 					</ul>
 					</div><!--END #add-product -->
 				</div><!-- END #sidebar -->
@@ -53,7 +36,7 @@
 					  <tr>
 						<th></th>
 						<th>ID</th>
-						<th>Product</th>
+						<th><a href='product-list.php'</a>Product</th>
 						<th>Author</th>
 						<th>Price</th>
 						<th>Date</th>
@@ -151,8 +134,19 @@
 					</ul>
 				</div><!--END #main-content -->
 			</div><!-- END #content -->
-			<div id='footer'>
-			</div><!--END #footer -->
-		</div><!-- END .wrapper -->
-	</body>
-<html>
+			
+			
+		
+			
+<?php
+		include ('templates/footer.php');
+	}else{
+		header('Location: login.php');
+	}	
+?>
+
+
+	
+
+			
+				
