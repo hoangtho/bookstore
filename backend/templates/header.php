@@ -29,7 +29,12 @@
 				<div id='main-nav'>
 					<ul>
 						<li><a href='index.php'>Home</a></li>
+<<<<<<< HEAD
 						<li><a href='product-list.php'>Products</a></li>
+=======
+						<li><a href='product-list.php'</a>Products</li>
+						<li><a href=''>Indents</a></li>
+>>>>>>> 5f67f5fecfd93a27a64a3d283f8f7c9b6ac3e73d
 						<li><a href='member.php'>Members</a></li>
 						<li><a href='order.php'>Orders</a></li>
 						<li><a href='feedback.php'>Feedback</a></li>

@@ -36,7 +36,7 @@
 					  <tr>
 						<th></th>
 						<th>ID</th>
-						<th>Product</th>
+						<th><a href='productlist1.php'</a>Product</th>
 						<th>Author</th>
 						<th>Price</th>
 						<th>Date</th>
