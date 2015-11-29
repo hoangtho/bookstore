@@ -6,7 +6,7 @@
 					<li><img src='images/creditcard.jpg'/></li>
 					<li><img src='images/mastercard.jpg'/></li>
 				</ul>
-				<p>&copy; 2014 Book Online Store - Alrights Reversed </p>
+				<p>&copy; <?php echo date('Y'); ?> Book Online Store - Alrights Reversed </p>
 			</div><!-- END .wrapper -->
 		</div><!-- END #footer -->
 		

@@ -41,7 +41,7 @@
 		
 			mysqli_query($con, $sql);
 			
-			header('Location: category-list.php');
+			header('Location:category-list.php');
 		}
 ?>
 

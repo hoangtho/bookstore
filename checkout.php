@@ -4,6 +4,7 @@
 	
 		if($_SESSION['login']){
 					$query = "SELECT * FROM user WHERE userID = ".$_SESSION['userID'];
+
 					$r = mysqli_query($con, $query);
 					$row = mysqli_fetch_array($r);
 					$fullname = $row['fullname'];
@@ -12,9 +13,7 @@
 
 					if($result){
 						for($i = 0; $i < count($_SESSION['giohang']); $i++){
-							$sql1 =  "SELECT max(orderID) FROM order";
-							
-							echo "SELECT max(orderID) FROM order";
+							$sql1 =  "SELECT max(`orderID`) FROM `order` ";
 							
 							$max = mysqli_query($con, $sql1);
 							$row = mysqli_fetch_array($max);
@@ -33,8 +32,8 @@
 							$result = mysqli_query($con, $sql);
 						}	
 					}
-					// unset($_SESSION['giohang']);
-					// header("Location: index.php");
+					unset($_SESSION['giohang']);
+					header("Location: index.php");
 		}
 
 	
